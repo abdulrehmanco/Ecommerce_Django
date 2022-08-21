@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{%load static%}
+ {%block title%} Add Product{%endblock title%}
+
+  {%block body%}
+	<main>
+			<div class="tm-container-inner-2 tm-contact-section">
+				<div class="row">
+					<div class="col-md-6">
+					 <form method="POST" action="" enctype="multipart/form-data" class="tm-contact-form">
+			
+						{% csrf_token %}
+                          <div class="form-group">
+					          <input type="text" name="title" id="title" class="form-control" placeholder="title" required="" />
+					        </div>
+
+					        <div class="form-group">
+					          <textarea rows="5" name="desc" class="form-control" placeholder="Description" required=""></textarea>
+					        </div>
+
+					        <div class="form-group">
+								<select input type="text" name="name"  class="form-control" placeholder="catogery" required="" >
+								{%for cato in cat%}
+								<option>
+									{{cato.name}}
+								</option>
+								{%endfor%}
+
+							    </select>
+					        </div>
+
+                            <div class="form-group">
+					          <input type="Integer" name="price" class="form-control" placeholder="price" required="" />
+					        </div>
+				      
+					        <div class="form-group">   
+                             <input type="file" name="image" class="form-control" placeholder="image" required="" />
+					        </div>
+				         	       
+					
+					        <div class="form-group tm-d-flex">
+					          <button type="submit" class="tm-btn tm-btn-success tm-btn-right">
+					            Add-Product
+					          </button>
+					           </div>
+						</form>
+					</div>
+                
+			
+		</main>
+{%endblock body%}

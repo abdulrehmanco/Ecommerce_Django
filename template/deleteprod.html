@@ -1,0 +1,12 @@
+
+<div class="main>"
+
+<p> Are you sure?🤔 delete this "{{item}}"</p>
+<a href="{% url 'homepage' %}">Cancel</a>
+
+<form method='post' action="">
+  {% csrf_token %}
+   <input type='submit' name='confirm'>
+</form>
+
+</div>

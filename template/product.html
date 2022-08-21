@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Shop{% endblock title %}
+{% block body %}
+<section class="item content">
+    <div class="container toparea">
+        <div class="underlined-title">
+            <div class="editContent">
+                <h1 class="text-center latestitems">OUR PRODUCTS</h1>
+            </div>
+            <div class="wow-hr type_short">
+                <span class="wow-hr-h">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                </span>
+            </div>
+        </div>
+        <div class="row">
+            {%for prod in post%}
+            <div class="col-md-4">
+                <div class="productbox">
+                    <div class="fadeshop">
+                        <div class="captionshop text-center" style="display: none;">
+                            <h3>{{prod.title}} </h3>
+                            <p>
+                                 This is a short excerpt to generally describe what the item is about.
+                            </p>
+                            <p>
+                                <a href="#" class="learn-more detailslearn"><i class="fa fa-shopping-cart"></i> Purchase</a>
+                                <a href="#" class="learn-more detailslearn"><i class="fa fa-link"></i> Details</a>
+                            </p>
+                        </div>
+                        <span class="maxproduct"><img src="{{prod.image}}" alt=""></span>
+                    </div>
+                    <div class="product-details">
+                        <a href="{{prod.slug}}">
+                        <h1>{{prod.title}}</h1>
+                        </a>
+                        <span class="price">
+                        <span class="edd_price">${{prod.price}}</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            {%endfor%}
+        </div>
+           
+        
+        
+    </div>
+    </section>
+    
+
+    
+{% endblock body %}
